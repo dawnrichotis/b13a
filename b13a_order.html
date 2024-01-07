@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>網路訂購</title>
+    <link rel="stylesheet" href="b13a.css" type="text/css">
+    <script src="b13a.js" language="javascript"></script>
+</head>
+<body>
+    <header><h1>快點送平台</h1></header>
+    <nav>
+        <a href="b13a.html">關於我們</a>
+        <a href="b13a_menu.html">餐點目錄</a>
+        <a href="b13a_order.html">網路訂購</a>
+    </nav>
+    <hr>
+    <div id="left_summary">
+        <p class="banner">訂單總攬</p>
+        <p class="detail">產品金額 <u><span id='total_text'></span></u></p>
+        <p class="detail">運費<u><span id='ship_cost_text'></span></u></p>
+        <p class="detail">全部金額 <u><span id='sum_text'></span></u></p>
+    </div>
+    <div id="right_detail">
+        <form method="POST" action="b13a.php">
+            <h2>網路訂購</h2>
+            <p class="banner">訂購人資訊</p>
+            <table>
+                <tr>
+                    <td>訂購人姓名*<br><input type="text" size="40" name="name"></td>
+                    <td>訂購人電話*<br><input type="text" size="40" name="telephone"></td>
+                </tr>
+                <tr>
+                    <td>聯絡手機*<br><input type="text" size="40" name="cellphone"></td>
+                    <td>配送地址*<br><input type="text" size="40" name="address"></td>
+                </tr>
+            </table>
+            <p class="banner">商品內容</p>
+            <table id="product_table">
+                <tr>
+                    <td>雞肉凍</td><td>NT$ 150</td> 
+                    <td>5片/1單位<br>
+                        <input type="number" min="0" max="20" step="1" value="0"
+                        name="p_no[]" onchange="javascript:get_order();">
+                    </td>
+                    <td>香煎鮭魚</td><td>NT$ 200</td>
+                    <td>1塊/1單位<br>
+                        <input type="number" min="0" max="20" step="1" value="0"
+                        name="p_no[]" onchange="javascript:get_order();">
+                    </td>
+                </tr>
+            </table>
+            <p>
+                <input id="final_btn" type="submit" value="確定訂單" name="final">
+                <input id="clear_btn" type="button" value="重新填寫" onclick="javascript:clear_order();">
+            </p>
+        </form>
+    </div>
+</body>
+</html>
+
